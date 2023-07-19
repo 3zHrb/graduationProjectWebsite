@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Atrial Fibrillation Detector</title>
+</head>
+
+<body>
+    <h4 style="color: #113f67;">This website was built by: Abdulaziz Alharbi</h4>
+    <div class="projectIntroDiv">
+        <a href="https://github.com/3zHrb/ENGR697FixedVersion">Visite Project Github</a>
+        <h1>Atrial Fibrillation Detector</h1>
+        <h3>Computer Engineering Graduation Project</h3>
+        <p><b>Brief:</b>The who idea of the project is to monitor the patient's heart rate and detect any sign of Atrial
+            Fibrillation
+        </p><b>General Explanation on how the project works:</b>
+        the bracelet we built will measure the patient's heart rate and send it at the same time to an iOS application
+        we
+        built</p>
+        </p>
+        <img src="{{url_for('static', filename='projectDiagram.png')}}">
+        <h4>This project was built by: Abdulaziz Alharbi, Abdulrahman Abonayan, Rotanak Nou</h4>
+        <div class="videoDiv">
+            <video width="640" height="480" controls>
+                <source src="{{url_for('static', filename='wholeProjectProcess.mp4')}}" type="video/mp4">
+            </video>
+            <p>This video shows the whole project process, from measuring the heart rate using Arduino Beetle and the
+                heart
+                rate
+                sensor,
+                to send the data to the iOS Application and display the data it receives on the applications chart,
+                and lastly, it shows how the application is storing the data it receives in the Firebase database in
+                realtime.
+            </p>
+        </div>
+        <div class="videoDiv">
+            <video width="640" height="480" controls>
+                <source src="{{url_for('static', filename='accessingHistoricalDataiOSApp.MOV')}}" type="video/mp4">
+            </video>
+            <p>This video shows how the patient can access his/her historical heart rate activities using the iOS
+                Application's calendar
+            </p>
+        </div>
+
+    </div>
+
+
+
+    <div class="hardwareDiv">
+        <h2>Bracelet (Hardware)</h2>
+        <img src="{{url_for('static', filename='schematicWiring.png')}}" style="border-radius: 20px;">
+        <h2>Hardware Components</h2>
+        <div class="hardwareComponentsDiv">
+            <div class="component">
+                <h4>Microcontroller (Arduino Bluno Beetle)</h4>
+                <img src="{{url_for('static', filename='arduinoBeetle.png')}}">
+            </div>
+            <div class="component">
+                <h4>Heartrate Sensor (MAX30100)</h4>
+                <img src="{{url_for('static', filename='MAX30100.png')}}">
+            </div>
+            <div class="component">
+                <h4>LiPo Battery</h4>
+                <img src="{{url_for('static', filename='Lipo-battery.png')}}">
+            </div>
+            <div class="component">
+                <h4>Battery Charger (XC4512 DC-to-DC Converter)</h4>
+                <img src="{{url_for('static', filename='XC4502.png')}}">
+            </div>
+            <div class="component">
+                <h4>Piezo Buzzer</h4>
+                <img src="{{url_for('static', filename='piezo-electric-buzzers.png')}}">
+            </div>
+            <div class="component">
+                <h4>Battery Switch (DPDT slide switch 6 pins)</h4>
+                <img src="{{url_for('static', filename='6pin_dpdt_switch.png')}}">
+            </div>
+        </div>
+    </div>
+
+    <div class="phoneAppDiv">
+        <h2>iOS Application</h2>
+        <img src="{{url_for('static', filename='iOSApplication.png')}}">
+        <div class="iOSApplicationCompoenentsDiv">
+            <div class="component">
+                <h4>Heart Rate Realtime Chart</h4>
+                <img src="{{url_for('static', filename='heartRateChart.png')}}" alt="">
+            </div>
+            <div class="component">
+                <h4>Bluetooth Connection To Arduino Beetle</h4>
+                <img src="{{url_for('static', filename='bluetooth.svg')}}" alt="">
+            </div>
+            <div class="component">
+                <h4>Firebase Database</h4>
+                <img src="{{url_for('static', filename='firebase-realtime-database2.png')}}" alt="">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- The goal of this project is to detect any insatnt spike in the patient heart rate, using an arduino beetle that we programmed to
+    measure the patiant heart rate using a heartrate sensor (Max30100) thaht we soldered to one of the arduino beetle input to read the patiant heart rate and send data to an iOS application we built in order to save the data to a
+    firebase database for latter access, the application will have a live chart taht shows the patient hart rate coming from the arduino beetle via bluetooth connection, if the arduino beetle detects any instance big change in the patient hart rate, it will make a buzz sound using -->
+</body>
+
+</html>
+
+
+<style>
+    body {
+        text-align: center;
+        font-family: "Source Sans Pro", "Helvetica", sans-serif;
+        color: white;
+        background-color: #e7eaf6;
+        text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        ;
+    }
+
+    .projectIntroDiv {
+        background-color: #a2a8d3;
+        border-radius: 30px;
+        padding: 20px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    .projectIntroDiv * {
+        margin: 30px;
+    }
+
+    img {
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    video {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+
+    .videoDiv {
+        background-color: #113f67;
+        border-radius: 30px;
+        padding: 20px;
+        margin: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        margin: 30px;
+    }
+
+    .hardwareDiv {
+        background-color: #a2a8d3;
+        border-radius: 30px;
+        padding: 20px;
+        margin: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    .phoneAppDiv {
+        border-radius: 30px;
+        padding: 20px;
+        margin: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    .component img {
+        width: 120px;
+        height: 120px;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .hardwareComponentsDiv .component {
+        display: inline-block;
+        border-color: black;
+        background-color: #113f67;
+        padding: 20px;
+        margin: 30px;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .phoneAppDiv {
+        background-color: #a2a8d3;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .phoneAppDiv img {
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .iOSApplicationCompoenentsDiv .component {
+        display: inline-block;
+        border-color: black;
+        background-color: #113f67;
+        padding: 20px;
+        margin: 30px;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    a {
+        text-decoration: none;
+        background-color: #113f67;
+        color: white;
+        width: 10%;
+        height: 20px;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 20px;
+        display: inline-block;
+        text-align: center;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    /* CSS */
+    .button-33 {
+        background-color: #a2a8d3;
+        border-radius: 100px;
+        box-shadow: #113f67 0 -25px 18px -14px inset, #113f67 0 1px 2px, #113f67 0 2px 4px, #113f67 0 4px 8px, #113f67 0 8px 16px, #113f67 0 16px 32px;
+        color: #113f67;
+        cursor: pointer;
+        display: inline-block;
+        font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
+        padding: 7px 20px;
+        text-align: center;
+        text-decoration: none;
+        transition: all 250ms;
+        border: 0;
+        font-size: 16px;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+    }
+
+    .button-33:hover {
+        box-shadow: #113f67 0 -25px 18px -14px inset, #113f67 0 1px 2px, #113f67 0 2px 4px, #113f67 0 4px 8px, #113f67 0 8px 16px, #113f67 0 16px 32px;
+        transform: scale(1.05) rotate(-1deg);
+    }
+</style>
